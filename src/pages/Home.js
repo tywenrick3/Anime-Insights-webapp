@@ -4,7 +4,7 @@ function Home() {
 	return (
 		<main className='App'>
 			<header>
-				<nav className='navbar'></nav>
+				<nav className='navbar'>Midterm Project</nav>
 			</header>
 		</main>
 	);
