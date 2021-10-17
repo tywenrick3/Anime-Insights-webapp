@@ -1,19 +1,13 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 
-const QUERY_STRING = `https://cors-anywhere.herokuapp.com/https://animechan.vercel.app/api/random`;
+let name = 'goku';
+
+const QUERY_STRING = `https://cors-anywhere.herokuapp.com/https://animechan.vercel.app/api/quotes/character?name=${name}`;
 
 function Home() {
-	//const [quote, setQuote] = useState();
+	const [quote, setQuote] = useState();
 
-	fetch(QUERY_STRING)
-		.then((response) => response.json())
-		.catch(function (error) {
-			console.warn(error);
-		})
-		.then((quote) => console.log(quote));
-
-	/*
 	useEffect(() => {
 		if (!quote) {
 			axios
@@ -21,13 +15,13 @@ function Home() {
 				.then(function (response) {
 					const animeQuote = response.data;
 					setQuote(animeQuote);
+					console.log(animeQuote);
 				})
 				.catch(function (error) {
 					console.warn(error);
 				});
 		}
 	}, []);
-	*/
 
 	return (
 		<main className='App'>
