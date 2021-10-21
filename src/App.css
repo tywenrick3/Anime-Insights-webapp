@@ -1,18 +1,45 @@
+.AnimeQuote {
+	color: white;
+	border: 2px solid;
+	font-size: 24px;
+	border-color: whitesmoke;
+}
+
+.animeTitle {
+	color: red;
+}
+
 .App {
+	margin: 0 auto;
+	max-width: 1080px;
+	padding: 0 25px;
 	text-align: center;
 }
 
+Body {
+	background: rgb(24, 24, 24);
+}
+
 .App-header {
-	background-color: #282c34;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
-	color: white;
+	color: rgb(206, 206, 206);
 }
 
 .App-link {
 	color: #61dafb;
+}
+
+.quote {
+	font-style: italic;
+}
+
+.title {
+	color: white;
+	font-size: 24px;
+	font-family: monospace;
 }
