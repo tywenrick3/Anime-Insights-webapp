@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 
-let name = 'goku';
-
-const QUERY_STRING = `https://cors-anywhere.herokuapp.com/https://animechan.vercel.app/api/quotes/character?name=${name}`;
+let name = 'luffy';
+const ANIME_QUERY_STRING = `https://cors-anywhere.herokuapp.com/https://animechan.vercel.app/api/quotes/character?name=${name}`;
 
 function Home() {
 	const [quote, setQuote] = useState();
@@ -11,11 +10,11 @@ function Home() {
 	useEffect(() => {
 		if (!quote) {
 			axios
-				.get(QUERY_STRING)
+				.get(ANIME_QUERY_STRING)
 				.then(function (response) {
-					const animeQuote = response.data;
-					setQuote(animeQuote);
-					console.log(animeQuote);
+					const quotes = response.data;
+					setQuote(quotes);
+					console.log(quotes);
 				})
 				.catch(function (error) {
 					console.warn(error);
@@ -29,6 +28,16 @@ function Home() {
 				<h1>Midterm Project</h1>
 				<nav className='navbar'></nav>
 			</header>
+
+			<footer>
+				<a
+					href='https://cors-anywhere.herokuapp.com/corsdemo'
+					target='blank'
+					rel='none'
+				>
+					Re-activate cors-anywhere
+				</a>
+			</footer>
 		</main>
 	);
 }
