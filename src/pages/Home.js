@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import AnimeQuote from '../components/AnimeQuote';
+import Search from '../components/Search';
 
 let name = 'luffy';
 let animeName = 'fma_brotherhood';
@@ -58,8 +59,8 @@ function Home() {
 	return (
 		<main className='App'>
 			<header className='title'>
-				<h1>Get inspired by your favorite anime character</h1>
-				<nav className='navbar'></nav>
+				<h1>Seek Advice From Gods</h1>
+				<Search />
 			</header>
 			<AnimeQuote
 				className='quote'
