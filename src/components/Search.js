@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useMemo } from 'react';
 
 function Search() {
-	const [query, setQuery] = useState();
+	const [name, setName] = useState('');
+	console.log(name);
 	return (
 		<section className='Search'>
 			<input
 				placeholder='Search'
-				onChange={(event) => setQuery(event.target.value)}
+				type='text'
+				onChange={(event) => setName(event.target.value)}
 			/>
 		</section>
 	);
