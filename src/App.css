@@ -6,6 +6,14 @@
 	border-color: whitesmoke;
 }
 
+.AnimeFact {
+	color: white;
+	border: 2px solid;
+	border-radius: 20px;
+	font-size: 24px;
+	border-color: whitesmoke;
+}
+
 .animeTitle {
 	color: red;
 }
@@ -31,10 +39,6 @@ Body {
 	color: rgb(206, 206, 206);
 }
 
-.App-link {
-	color: #61dafb;
-}
-
 .quote {
 	font-style: italic;
 }
@@ -45,6 +49,23 @@ Body {
 	font-family: monospace;
 }
 
-.Search {
-	padding: 10px;
+.Navigation {
+	display: flex;
+	flex-direction: row;
+}
+
+.Navigation a {
+	color: white;
+	padding: 10px 0;
+	text-align: left;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: basic-sans, sans-serif;
+	margin: auto;
+}
+
+.Navigation a.Active {
+	border-bottom: 2px solid white;
+	color: rgb(255, 49, 66);
 }
