@@ -23,36 +23,6 @@ function Home() {
 	useEffect(() => {
 		const charValue = query.get('name');
 		setChar(charValue);
-	}, [query]);
-
-	useEffect(() => {
-		const nameValue = query.get('name');
-		if (nameValue === 'luffy' || nameValue === 'zoro') {
-			setSeries('one_piece');
-		} else {
-			setSeries('naruto');
-		}
-	}, [query]);
-
-	useEffect(() => {
-		if (!factData) {
-			axios
-				.get(
-					`https://anime-facts-rest-api.herokuapp.com/api/v1/${series}`
-				)
-				.then(function (response) {
-					let index = getRandomIndex(0, 10);
-					const fact = response.data.data.fact;
-					setFactData(fact);
-					console.log(fact);
-				})
-				.catch(function (error) {
-					console.warn(error);
-				});
-		}
-	}, []);
-
-	useEffect(() => {
 		if (!quoteData) {
 			axios
 				.get(
@@ -68,7 +38,31 @@ function Home() {
 					console.warn(error);
 				});
 		}
-	}, []);
+	}, [query]);
+
+	useEffect(() => {
+		const nameValue = query.get('name');
+		if (nameValue === 'luffy' || nameValue === 'zoro') {
+			setSeries('one_piece');
+		} else {
+			setSeries('naruto');
+		}
+		console.log(series);
+		if (!factData) {
+			axios
+				.get(
+					`https://anime-facts-rest-api.herokuapp.com/api/v1/${series}`
+				)
+				.then(function (response) {
+					let index = getRandomIndex(0, 10);
+					const fact = response.data.data.fact;
+					setFactData(fact);
+				})
+				.catch(function (error) {
+					console.warn(error);
+				});
+		}
+	}, [query]);
 
 	const { anime, name, quote } = useMemo(() => {
 		if (!quoteData) return {};
@@ -129,14 +123,16 @@ function Home() {
 					</a>
 				</nav>
 			</header>
-			<AnimeQuote
-				className='quote'
-				anime={anime}
-				name={name}
-				quote={quote}
-			/>
+			<div className='comps'>
+				<AnimeQuote
+					className='quote'
+					anime={anime}
+					name={name}
+					quote={quote}
+				/>
 
-			<AnimeFact className='fact' fact={fact} />
+				<AnimeFact className='fact' fact={fact} />
+			</div>
 
 			<footer>
 				<a

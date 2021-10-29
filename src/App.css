@@ -1,15 +1,16 @@
 .AnimeQuote {
 	color: white;
 	border: 2px solid;
-	border-radius: 20px;
+	border-radius: 15px;
 	font-size: 24px;
 	border-color: whitesmoke;
+	margin-bottom: 20px;
 }
 
 .AnimeFact {
 	color: white;
 	border: 2px solid;
-	border-radius: 20px;
+	border-radius: 15px;
 	font-size: 24px;
 	border-color: whitesmoke;
 }
@@ -27,6 +28,10 @@
 
 Body {
 	background: rgb(24, 24, 24);
+}
+
+.comps {
+	margin: 20px;
 }
 
 .App-header {
