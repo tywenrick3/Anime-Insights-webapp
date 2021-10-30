@@ -29,9 +29,9 @@ function Home() {
 					`https://cors-anywhere.herokuapp.com/https://animechan.vercel.app/api/quotes/character?name=${char}`
 				)
 				.then(function (response) {
-					console.log(response.data);
 					let index = getRandomIndex(0, 9);
 					const quotes = response.data[index];
+					console.log(quotes);
 					setQuoteData(quotes);
 				})
 				.catch(function (error) {
@@ -44,10 +44,13 @@ function Home() {
 		const nameValue = query.get('name');
 		if (nameValue === 'luffy' || nameValue === 'zoro') {
 			setSeries('one_piece');
+		}
+		if (nameValue === 'saitama') {
+			setSeries('one_punch_man');
 		} else {
 			setSeries('naruto');
 		}
-		console.log(series);
+
 		if (!factData) {
 			axios
 				.get(
@@ -55,8 +58,9 @@ function Home() {
 				)
 				.then(function (response) {
 					let index = getRandomIndex(0, 10);
-					const fact = response.data.data.fact;
-					setFactData(fact);
+					const facts = response.data.data[index];
+					console.log(facts);
+					setFactData(facts);
 				})
 				.catch(function (error) {
 					console.warn(error);
@@ -83,7 +87,7 @@ function Home() {
 	return (
 		<main className='App'>
 			<header className='title'>
-				<h1>Seek Advice From Gods</h1>
+				<h1>Anime Insights</h1>
 				<nav className='Navigation'>
 					<a
 						href='/?name=luffy'
@@ -114,12 +118,32 @@ function Home() {
 						Zoro
 					</a>
 					<a
-						href='/?name=itachi'
+						href='/?name=Itachi Uchiha'
 						className={
-							char === 'itachi' && 'Active' && series === 'naruto'
+							char === 'Itachi Uchiha' &&
+							'Active' &&
+							series === 'naruto'
 						}
 					>
 						Itachi
+					</a>
+					<a
+						href='/?name=saskue'
+						className={
+							char === 'saskue' && 'Active' && series === 'naruto'
+						}
+					>
+						Saskue
+					</a>
+					<a
+						href='/?name=saitama'
+						className={
+							char === 'saitama' &&
+							'Active' &&
+							series === 'naruto'
+						}
+					>
+						Saitama
 					</a>
 				</nav>
 			</header>
@@ -131,7 +155,7 @@ function Home() {
 					quote={quote}
 				/>
 
-				<AnimeFact className='fact' fact={fact} />
+				<AnimeFact className='fact' fact={fact} series={series} />
 			</div>
 
 			<footer>

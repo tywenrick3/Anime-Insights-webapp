@@ -2,21 +2,21 @@
 	color: white;
 	border: 2px solid;
 	border-radius: 15px;
+	border-color: rgb(251, 70, 130);
 	font-size: 24px;
-	border-color: whitesmoke;
 	margin-bottom: 20px;
 }
 
 .AnimeFact {
-	color: white;
+	color: rgb(255, 255, 255);
 	border: 2px solid;
+	border-color: rgb(251, 70, 130);
 	border-radius: 15px;
 	font-size: 24px;
-	border-color: whitesmoke;
 }
 
 .animeTitle {
-	color: red;
+	color: rgb(251, 70, 130);
 }
 
 .App {
@@ -49,7 +49,7 @@ Body {
 }
 
 .title {
-	color: white;
+	color: rgb(251, 70, 130);
 	font-size: 24px;
 	font-family: monospace;
 }
@@ -61,7 +61,7 @@ Body {
 
 .Navigation a {
 	color: white;
-	padding: 10px 0;
+	padding: 10px;
 	text-align: left;
 	text-decoration: none;
 	font-weight: bold;
@@ -70,7 +70,19 @@ Body {
 	margin: auto;
 }
 
-.Navigation a.Active {
-	border-bottom: 2px solid white;
-	color: rgb(255, 49, 66);
+.Navigation a:hover {
+	border-bottom: 2px solid rgb(251, 70, 130);
+	color: rgb(255, 253, 253);
+}
+
+.Navigation a:visited {
+	border-bottom: 2px solid rgb(251, 70, 130);
+	color: rgb(255, 253, 253);
+}
+
+.factinfo {
+	color: rgb(251, 70, 130);
+}
+.fact {
+	font-style: italic;
 }
