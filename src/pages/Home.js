@@ -128,9 +128,9 @@ function Home() {
 						Itachi
 					</a>
 					<a
-						href='/?name=saskue'
+						href='/?name=sasuke'
 						className={
-							char === 'saskue' && 'Active' && series === 'naruto'
+							char === 'sasuke' && 'Active' && series === 'naruto'
 						}
 					>
 						Saskue
