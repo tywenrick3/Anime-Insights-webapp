@@ -1,8 +1,6 @@
 import React from 'react';
 
 function AnimeQuote({ series, fact }) {
-	console.log(series);
-	console.log(fact);
 	return (
 		<section className='AnimeFact'>
 			<div>

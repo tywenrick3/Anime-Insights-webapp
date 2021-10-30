@@ -50,8 +50,8 @@ Body {
 
 .title {
 	color: rgb(251, 70, 130);
+	font-family: bc-alphapipe, sans-serif;
 	font-size: 24px;
-	font-family: monospace;
 }
 
 .Navigation {
