@@ -31,7 +31,6 @@ function Home() {
 				.then(function (response) {
 					let index = getRandomIndex(0, 9);
 					const quotes = response.data[index];
-					console.log(quotes);
 					setQuoteData(quotes);
 				})
 				.catch(function (error) {
@@ -54,11 +53,12 @@ function Home() {
 		if (!factData) {
 			axios
 				.get(
-					`https://anime-facts-rest-api.herokuapp.com/api/v1/${series}`
+					`https://cors-anywhere.herokuapp.com/https://anime-facts-rest-api.herokuapp.com/api/v1/${series}`
 				)
 				.then(function (response) {
 					let index = getRandomIndex(0, 10);
 					const facts = response.data.data[index];
+					console.log('fact below');
 					console.log(facts);
 					setFactData(facts);
 				})
