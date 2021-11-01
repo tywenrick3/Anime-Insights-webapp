@@ -41,14 +41,16 @@ function Home() {
 
 	useEffect(() => {
 		const nameValue = query.get('name');
+		console.log(nameValue);
 		if (nameValue === 'luffy' || nameValue === 'zoro') {
 			setSeries('one_piece');
-		}
-		if (nameValue === 'saitama') {
+		} else if (nameValue === 'saitama') {
 			setSeries('one_punch_man');
 		} else {
 			setSeries('naruto');
 		}
+		console.log('check');
+		console.log(series);
 
 		if (!factData) {
 			axios
