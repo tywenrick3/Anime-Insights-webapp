@@ -1,5 +1,5 @@
 # Description
-Uses 2 seperate anime API's to fetch and display quotes and facts based of the selected anime character in the nav bar.
+Uses a few anime API's to display quotes and facts based of the selected character in the nav bar.
 
 Quotes are queried by the character name, Facts are queried by the related series of the selected character.
 
